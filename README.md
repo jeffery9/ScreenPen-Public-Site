@@ -1,5 +1,7 @@
 # ScreenPen (Offline Activation Version) | 屏幕标注与演示增强神器 🖋️✨
 
+<img src="docs/images/app_icon.png" width="128" align="right" />
+
 **The ultimate screen annotation and presentation tool for macOS professionals.**
 **专为 macOS 专业人士打造的终极屏幕标注与教学演示增强工具。**
 
