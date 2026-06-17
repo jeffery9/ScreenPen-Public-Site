@@ -24,6 +24,8 @@ ScreenPen 是一款专为 macOS 原生打造、高性能且轻量的屏幕标注
 
 ## 🚀 Key Features | 核心功能
 
+![ScreenPen Toolbar](docs/images/toolbar.png)
+
 ### 🖋️ Professional Annotation | 专业标注
 - **Zero-Latency Drawing | 零延迟书写**: GPU-accelerated rendering using Apple's QuartzCore. | 基于 QuartzCore 的 GPU 加速渲染。
 - **Precision Shapes | 精准形状**: Lines, Arrows, Rectangles, and Circles. | 直线、箭头、矩形、圆形一应俱全。
