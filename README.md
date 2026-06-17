@@ -39,7 +39,7 @@ ScreenPen is a powerful, lightweight, and high-performance screen annotation sui
 
 We believe in "Try Before You Buy."
 
-1.  **Download**: Get the latest `.app` from our [Releases](https://github.com/your-username/ScreenPen-Public-Site/releases) page.
+1.  **Download**: Get the latest `.app` from our [Releases](https://github.com/jeffery9/ScreenPen-Public-Site/releases) page.
 2.  **Trial**: Enjoy **7 days of full PRO features** for free upon first launch.
 3.  **Get Machine ID**: After the trial, open the activation window to find your unique **Machine ID**.
 4.  **Activate**: Send your Machine ID to the author to receive your lifetime activation key.
@@ -68,7 +68,7 @@ For license inquiries, business cooperation, or feedback:
 
 ## 🔧 Installation
 
-1.  Download `ScreenPen-Unlocked.app` from [Releases](https://github.com/your-username/ScreenPen-Public-Site/releases).
+1.  Download `ScreenPen-Unlocked.app` from [Releases](https://github.com/jeffery9/ScreenPen-Public-Site/releases).
 2.  Drag to your `Applications` folder.
 3.  **Permissions**: ScreenPen requires **Screen Recording** and **Accessibility** permissions to draw over other windows and capture keystrokes. Follow the system prompts to authorize.
 
