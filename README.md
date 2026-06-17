@@ -2,6 +2,7 @@
 
 **The ultimate screen annotation and presentation tool for macOS professionals.**
 
+[![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-blue.svg)](#installation)
 [![License: Pro](https://img.shields.io/badge/License-Pro-gold.svg)](#pricing)
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%2013%2B-blue.svg)](https://apple.com/macos)
 
