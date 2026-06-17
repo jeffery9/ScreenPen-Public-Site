@@ -1,0 +1,50 @@
+name: Sync Releases to GitHub
+
+on:
+  push:
+    paths:
+      - 'releases/**'
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sync-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Identify and Sync Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 寻找最新的 ZIP 文件
+          ZIP_FILE=$(ls releases/*.zip | head -n 1)
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No zip file found in releases/ directory."
+            exit 0
+          fi
+
+          # 从文件名解析版本号 (假设格式为 ScreenPen-Unlocked-vX.Y.Z.zip)
+          VERSION=$(echo $ZIP_FILE | grep -oE 'v[0-9.]+' | head -n 1)
+          if [ -z "$VERSION" ]; then
+            # 如果没匹配到 vX.Y.Z，尝试直接获取数字部分并补上 v
+            VERSION="v$(echo $ZIP_FILE | grep -oE '[0-9.]+' | head -n 1)"
+          fi
+
+          echo "Detected Version: $VERSION"
+          echo "File Path: $ZIP_FILE"
+
+          # 检查 Release 是否已存在
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "Updating existing release $VERSION..."
+            gh release upload "$VERSION" "$ZIP_FILE" --clobber
+          else
+            echo "Creating new release $VERSION..."
+            gh release create "$VERSION" "$ZIP_FILE" \
+              --title "$VERSION - ScreenPen Unlocked" \
+              --notes "Automated release synced from repository directory. This version includes latest PRO enhancements."
+          fi
