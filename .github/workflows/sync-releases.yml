@@ -28,11 +28,13 @@ jobs:
             exit 0
           fi
 
-          # 从文件名解析版本号 (假设格式为 ScreenPen-Unlocked-vX.Y.Z.zip)
-          VERSION=$(echo $ZIP_FILE | grep -oE 'v[0-9.]+' | head -n 1)
-          if [ -z "$VERSION" ]; then
-            # 如果没匹配到 vX.Y.Z，尝试直接获取数字部分并补上 v
-            VERSION="v$(echo $ZIP_FILE | grep -oE '[0-9.]+' | head -n 1)"
+          # 从文件名解析版本号 (严格匹配数字点号结构，避免带入结尾的句号)
+          VERSION_RAW=$(echo "$ZIP_FILE" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          VERSION="v$VERSION_RAW"
+
+          if [ -z "$VERSION_RAW" ]; then
+            echo "Failed to parse version from $ZIP_FILE"
+            exit 1
           fi
 
           echo "Detected Version: $VERSION"
